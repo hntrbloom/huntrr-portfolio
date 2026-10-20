@@ -13,8 +13,8 @@ export const profile = {
     'I build practical tools, explore AI and data, and love figuring out how systems work. My background combines software projects, an applied AI and data science internship, and hands-on 3D printing.',
   location: 'Des Moines, Iowa',
   email: 'hebloom@icloud.com',
-  github: '', // Example: https://github.com/yourname
-  linkedin: '', // Example: https://linkedin.com/in/yourname
+  github: 'https://github.com/hntrbloom',
+  linkedin: 'https://www.linkedin.com/in/huntrr-bloom',
   resume: '/resume/Hunter_Bloom_Public_Resume.pdf',
   avatar: '', // Optional: '/images/profile.jpg'; otherwise use the illustrated laptop.
   mood: 'Inspired & a little caffeinated',
