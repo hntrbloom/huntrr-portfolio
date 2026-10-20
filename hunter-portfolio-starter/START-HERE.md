@@ -1,5 +1,7 @@
 # Your first portfolio edits
 
+Your live site is now https://huntrr-portfolio.vercel.app. Keep developing in this folder; see [DEPLOYMENT.md](DEPLOYMENT.md) for the VS Code → GitHub → Vercel workflow and dashboard settings. Use Node.js 24 LTS, and use pnpm 11.25.0 for dependency installation so the committed lockfile stays authoritative.
+
 ## Open your website
 
 Double-click `start-portfolio.cmd` in this folder. Keep its terminal window open, then open the Local address it prints in your browser (usually http://127.0.0.1:5173).
@@ -36,7 +38,7 @@ The starter's experience and project descriptions are sample copy. Edit them to 
 | --- | --- |
 | `src/data.ts` | Name, introduction, project text, skills, and contact links. Start here. |
 | `src/styles.css` | Colors, fonts, spacing, and layouts. This is CSS. |
-| `src/pages/` | The six page components: Home, About, Projects, Skills, Experience, and Contact. This is React markup, called JSX, with TypeScript. |
+| `src/pages/` | Home, About, Projects, project details, Skills, Experience, Résumé, and Contact. This is React markup, called JSX, with TypeScript. |
 | `src/components/` | Shared navigation, footer, layout, and project cards. |
 | `src/App.tsx` | The route list connecting each URL to a page. |
 | `index.html` | The browser tab title, description, and container React fills with the page. |

@@ -57,7 +57,6 @@ try {
   assert.ok(render('/contact').includes('mailto:hebloom@icloud.com'), 'Contact should use the professional email');
   const pdf = await readFile(new URL(`../public${profile.resume}`, import.meta.url));
   assert.ok(pdf.subarray(0, 5).toString() === '%PDF-', 'Résumé link must point to a real PDF');
-  assert.deepEqual(pdf, await readFile(new URL('../../resume/Hunter_Bloom_Public_Resume.pdf', import.meta.url)), 'Public résumé should match the supplied file');
   for (const content of [japanTrip.title, japanTrip.subtitle, ...japanTrip.story]) assert.ok(about.includes(escape(content)), 'Japan story should be included verbatim');
   for (const content of ['A curious mind.', 'My next', 'Associate of Applied Science']) assert.ok(about.includes(content), 'Existing About content should remain');
   const { default: japanPhotos } = await server.ssrLoadModule('/src/content/japan-photos.json');

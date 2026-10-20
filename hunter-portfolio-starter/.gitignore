@@ -3,6 +3,7 @@ node_modules
 .sites-runtime
 *.tsbuildinfo
 dist
+.vercel
 .DS_Store
 .env
 .env.*

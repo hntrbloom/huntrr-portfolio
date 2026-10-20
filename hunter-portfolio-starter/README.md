@@ -4,12 +4,12 @@
 
 ## Get it running
 
-1. Install Node.js (check that `node -v` reports a supported version; Vite 8 supports Node.js 20.19+ or 22.12+).
-2. Open the project folder in VS Code.
+1. Install Node.js 24 LTS (`node -v` should report `v24.x`) and pnpm 11.25.0 (`npm install --global pnpm@11.25.0` if needed). This matches the runtime selected for Vercel and satisfies both Vite and React Router.
+2. Open `hunter-portfolio-starter`, the app folder inside the Git repository, in VS Code.
 3. Open Terminal in VS Code, then run:
 
 ```bash
-npm install
+pnpm install --frozen-lockfile
 npm run dev
 ```
 
@@ -26,7 +26,7 @@ npm run dev
 **Next:** change the visuals.
 - Edit `src/styles.css` for colors, typography, layout, and mobile styles.
 - Add project screenshots to `public/images/` and set `screenshot: '/images/yourfile.png'` in the matching project object.
-- Add your real resume as `public/resume.pdf`, then set `profile.resume: '/resume.pdf'`.
+- The current résumé is `public/resume/Hunter_Bloom_Public_Resume.pdf`, referenced by `profile.resume`. Replace that public file when updating it, or update the path if you rename it.
 
 **Then:** improve the components.
 - Edit `src/App.tsx` to change the arrangement and behavior of each section.
@@ -40,7 +40,18 @@ npm run dev
 - Replace decorative preview panels with screenshots of *your own work*.
 - Test on mobile and desktop.
 - Run `npm run build` to verify the production build.
-- Use GitHub to version your project; import the repository into Vercel to publish it.
+- Run `npm run check:routes` and `npm run check:gallery` to check navigation, retained content, the résumé, and the local scrapbook editor.
+- Commit and push your intended changes to GitHub. Vercel automatically deploys pushes to the configured production branch (`master` in this repository).
+
+## Production hosting
+
+The existing Vercel project is `huntrr-portfolio`, at https://huntrr-portfolio.vercel.app. Its Root Directory must be `hunter-portfolio-starter`, with the Vite preset, `npm run build`, and output directory `dist`. See [DEPLOYMENT.md](DEPLOYMENT.md) for the exact dashboard settings, initial redeployment, and normal development workflow.
+
+Dependency installation uses the committed `pnpm-lock.yaml`; `npm run ...` runs the same package scripts with those installed dependencies. Use pnpm when adding or updating dependencies so there is one authoritative lockfile.
+
+`vercel.json` supplies the React Router fallback for direct links and refreshes. The file `public/_redirects` is not read by Vercel. Assets in `public/`, including `public/resume/Hunter_Bloom_Public_Resume.pdf`, are copied to `dist/` by Vite.
+
+The Japan scrapbook editor saves photos and captions through the local Vite development server. Commit `src/content/japan-photos.json` and the new files in `public/images/japan/` to publish them. The production site displays the saved gallery and lightbox; editing controls are available only locally.
 
 ## Tech
 
