@@ -1,0 +1,9 @@
+node_modules
+.pnpm-store
+.sites-runtime
+*.tsbuildinfo
+dist
+.DS_Store
+.env
+.env.*
+!.env.example
