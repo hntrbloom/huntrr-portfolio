@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F8F6F9"/>
+  <g stroke="#9B949E" stroke-width="2">
+    <rect x="48" y="48" width="1104" height="534" fill="#FFFFFF"/>
+    <path d="M48 108H1152"/>
+  </g>
+  <path d="M49 49H1151V107H49Z" fill="#FDE1EA"/>
+  <g fill="#5A3E5F" font-family="Tahoma, Verdana, sans-serif">
+    <text x="80" y="87" font-size="22">a personal portfolio website :)</text>
+    <text x="80" y="226" font-size="26" letter-spacing="3">WELCOME TO MY LITTLE SPACE.</text>
+    <text x="76" y="319" font-size="76" font-weight="bold">Hunter Bloom</text>
+    <text x="80" y="381" font-size="27">Software · AI &amp; data · hands-on engineering</text>
+    <text x="80" y="505" font-size="34" font-weight="bold">huntrr.space</text>
+  </g>
+  <text x="81" y="542" fill="#6E6873" font-family="Tahoma, Verdana, sans-serif" font-size="20">built with curiosity &amp; a little nostalgia</text>
+  <g transform="translate(835 225) scale(1.7)">
+    <rect width="160" height="160" fill="#E6D8F3" stroke="#9B949E"/>
+    <g fill="#B89CCF"><path d="M24 24h4v12h-4zM20 28h12v4H20zM132 108h4v12h-4zM128 112h12v4h-12z"/><path d="M126 26h4v4h-4zM25 119h4v4h-4z"/></g>
+    <g stroke="#6E6873" stroke-width="3" stroke-linejoin="round"><path d="M39 49h82v57H39z" fill="#FFF4FA"/><path d="M45 55h70v44H45z" fill="#FDE1EA"/><path d="M39 106h82l15 14v6H24v-6z" fill="#FFFFFF"/><path d="M37 117h86M68 122h24" fill="none"/></g>
+    <path d="M65 68h10v6h10v-6h10v17H85v10H75V85H65z" fill="#725276"/>
+    <path d="M32 138h96" stroke="#9B949E" stroke-width="2"/>
+  </g>
+</svg>

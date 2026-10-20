@@ -1,9 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Outlet, useLocation } from 'react-router';
-import { profile, projects } from '../data';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ProfileSidebar from './ProfileSidebar';
+import { updatePageMetadata } from '../seo';
 
 const titles: Record<string, string> = {
   '/': 'Home',
@@ -30,8 +30,7 @@ export default function Layout() {
     // Reset scroll for links, back, and forward, even when CSS enables smooth scrolling.
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     mainRef.current?.focus({ preventScroll: true });
-    const project = projects.find(item => location.pathname === `/projects/${item.id}`);
-    document.title = `${project?.title ?? titles[location.pathname.replace(/\/$/, '') || '/'] ?? 'Page not found'} | ${profile.name}`;
+    updatePageMetadata(location.pathname);
   }, [location.key, location.pathname]);
 
   return (

@@ -41,11 +41,12 @@ npm run dev
 - Test on mobile and desktop.
 - Run `npm run build` to verify the production build.
 - Run `npm run check:routes` and `npm run check:gallery` to check navigation, retained content, the résumé, and the local scrapbook editor.
+- Run `npm run check:seo` after building to verify canonical URLs, social metadata, sitemap, and robots.txt.
 - Commit and push your intended changes to GitHub. Vercel automatically deploys pushes to the configured production branch (`master` in this repository).
 
 ## Production hosting
 
-The existing Vercel project is `huntrr-portfolio`, at https://huntrr-portfolio.vercel.app. Its Root Directory must be `hunter-portfolio-starter`, with the Vite preset, `npm run build`, and output directory `dist`. See [DEPLOYMENT.md](DEPLOYMENT.md) for the exact dashboard settings, initial redeployment, and normal development workflow.
+The existing Vercel project is `huntrr-portfolio`, at https://huntrr.space. Its Root Directory must be `hunter-portfolio-starter`, with the Vite preset, `npm run build`, and output directory `dist`. See [DEPLOYMENT.md](DEPLOYMENT.md) for the exact dashboard settings, initial redeployment, and normal development workflow.
 
 Dependency installation uses the committed `pnpm-lock.yaml`; `npm run ...` runs the same package scripts with those installed dependencies. Use pnpm when adding or updating dependencies so there is one authoritative lockfile.
 

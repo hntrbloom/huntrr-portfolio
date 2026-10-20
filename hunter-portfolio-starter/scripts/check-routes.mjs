@@ -12,6 +12,7 @@ const server = await createServer({ cacheDir: path.join(os.tmpdir(), 'hunter-por
 try {
   const { default: App } = await server.ssrLoadModule('/src/App.tsx');
   const { projects, profile, skillGroups, experiences, education, japanTrip } = await server.ssrLoadModule('/src/data.ts');
+  const { getPageMetadata, seoPages, site } = await server.ssrLoadModule('/src/seo.ts');
   const pages = [
     ['/', 'Welcome to my'], ['/about', 'A curious mind.'], ['/projects', 'Things I&#x27;ve'],
     ['/skills', 'Tools I work'], ['/experience', 'Learning by'], ['/contact', 'Leave a little hello'],
@@ -20,6 +21,7 @@ try {
     ['/projects/missing-project', 'Project not found'], ['/missing-page', 'PAGE NOT FOUND'],
   ];
   const render = path => renderToStaticMarkup(React.createElement(MemoryRouter, { initialEntries: [path] }, React.createElement(App)));
+  assert.deepEqual(seoPages.map(page => page.path).sort(), pages.map(([path]) => path).filter(path => !path.includes('missing')).sort(), 'Every real route should have SEO metadata and a sitemap entry');
   for (const [path, content] of pages) {
     const markup = render(path);
     assert.ok(markup.includes(content), `${path} should render its own content`);
@@ -29,6 +31,17 @@ try {
     }
     assert.ok(markup.includes('id="main-content"'), `${path} should have a skip-link target`);
     assert.ok(!markup.includes('href="#"'), `${path} should not contain placeholder links`);
+    for (const [, href] of markup.matchAll(/href="([^"]+)"/g)) {
+      assert.ok(!href.startsWith(site.url) && !href.includes('huntrr-portfolio.vercel.app'), `${path} internal links should remain relative`);
+    }
+    const metadata = getPageMetadata(path);
+    if (path.includes('missing')) {
+      assert.equal(metadata.canonical, null, 'Missing pages should not claim another page as canonical');
+      assert.equal(metadata.robots, 'noindex, follow');
+    } else {
+      assert.equal(metadata.canonical, new URL(path, 'https://huntrr.space').href);
+      assert.equal(getPageMetadata(`${path === '/' ? '' : path}/`).canonical, metadata.canonical, 'Trailing slashes should use the same canonical');
+    }
     assert.ok(!/href="tel:|\b\d{3}[-. ]\d{3}[-. ]\d{4}\b/.test(markup), `${path} should not expose a personal phone number`);
     if (path.startsWith('/projects/') && path !== '/projects/missing-project') {
       assert.ok(/aria-current="page"[^>]*href="\/projects"/.test(markup), 'Projects navigation should remain active on details');
