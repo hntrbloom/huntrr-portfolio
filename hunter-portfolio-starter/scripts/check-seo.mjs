@@ -5,7 +5,7 @@ import { preview } from 'vite';
 const dist = new URL('../dist/', import.meta.url);
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-assert.equal(urls.length, 11, 'Sitemap should include all seven main pages and four project pages');
+assert.equal(urls.length, 12, 'Sitemap should include all seven main pages and five project pages');
 assert.ok(urls.includes('https://huntrr.dev/projects/huntrr-workspace'), 'Sitemap should include huntrr-workspace');
 assert.equal(new Set(urls).size, urls.length, 'Sitemap should not repeat pages');
 
@@ -58,7 +58,7 @@ try {
     }
     console.log(`PASS HTTP SEO ${pathname}`);
   }
-  for (const asset of ['/sitemap.xml', '/robots.txt', '/social-preview.png', '/resume/Hunter_Bloom_Public_Resume.pdf']) {
+  for (const asset of ['/sitemap.xml', '/robots.txt', '/social-preview.png', '/resume/Hunter_Bloom_Public_Resume.pdf', '/documents/Bloom_Hunter_Slides.pdf', '/documents/Bloom_Hunter_Posterboard.pdf']) {
     const response = await fetch(origin + asset);
     assert.equal(response.status, 200);
     assert.ok(!response.headers.get('content-type').includes('text/html'), `${asset} must not return the SPA shell`);
