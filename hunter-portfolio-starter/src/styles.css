@@ -116,6 +116,29 @@ svg { vertical-align: middle; }
 .profile-status > div { display: flex; gap: 6px; margin: 2px 0; }
 .profile-status dt { font-weight: bold; color: var(--heading); }
 .profile-status dd { margin: 0; }
+/* Extra personal notes are tucked away on small screens, without losing any details. */
+.profile-more { border-top: 1px dotted var(--gray); padding-top: 11px; margin-top: 8px; }
+.profile-more summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  list-style: none; cursor: pointer; padding: 7px 9px;
+  border: 1px solid var(--border); border-radius: 3px;
+  color: var(--heading); background: var(--panel-2);
+  font: bold 10px/1.6 'Courier New', monospace;
+}
+.profile-more summary::-webkit-details-marker { display: none; }
+.profile-more summary:hover { border-color: var(--gray); background: var(--lavender-fill); }
+.profile-more summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.profile-more summary span { font-size: 15px; transition: transform .2s ease; }
+.profile-more[open] summary span { transform: rotate(45deg); }
+.profile-extra-status { margin: 5px 0 0; }
+.profile-extra-status > div { padding: 7px 2px; border-bottom: 1px dotted var(--border); }
+.profile-extra-status > div:last-child { border-bottom: 0; }
+.profile-extra-status dt { font-weight: bold; color: var(--heading); font-size: 10px; }
+.profile-extra-status dd { margin: 1px 0 0; font-size: 10px; line-height: 1.65; overflow-wrap: anywhere; }
+@media (max-width: 620px) {
+  .profile-more summary, .profile-extra-status dt, .profile-extra-status dd { font-size: 11px; }
+}
+
 .profile-url { font-size: 9px; color: var(--muted); text-align: center; padding: 7px 5px; border: 1px solid var(--border); background: var(--panel-2); }
 .contacting-box .box-body { padding-block: 12px; }
 .profile-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 12px; font-size: 11px; font-weight: bold; }
