@@ -28,7 +28,7 @@ export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
       <div className="header-content">
         <Link className="brand" to="/" aria-label="Home" onClick={() => setMenuOpen(false)}>
           <span className="brand-icon" aria-hidden="true">♡</span>
-          <span>huntrr's<span className="brand-space">folio</span><span className="brand-star" aria-hidden="true">✧</span></span>
+          <span>huntrr's{' '}<span className="brand-space">folio</span><span className="brand-star" aria-hidden="true">✧</span></span>
         </Link>
         <span className="header-tagline">software · creativity · a little nostalgia</span>
         <div className="header-actions">
