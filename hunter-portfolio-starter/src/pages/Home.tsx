@@ -11,7 +11,6 @@ export default function Home() {
       <h1 id="welcome-heading">Welcome to my <em>little space.</em></h1>
       <p>I’m {profile.name} — an aspiring computer engineer, curious thinker, and maker of cute things. I’m interested in software engineering, AI, computer systems, and hardware.</p>
       <div className="welcome-bottom"><Link className="button button-primary" to="/resume">View My Résumé →</Link><Badge to="/about">✦ get to know me</Badge><span>built with curiosity & a few too many tabs open</span></div>
-      <span className="welcome-spark" aria-hidden="true">✳</span>
     </section>
     <RetroBox title="Hunter's blurbs" icon="♡" className="blurb-box">
       <h3>About me:</h3><p>{profile.introduction}</p>
