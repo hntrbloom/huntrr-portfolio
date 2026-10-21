@@ -40,6 +40,18 @@ export default function ProjectPhotoGallery({ photos, projectTitle }: { photos: 
       </figure>)}
     </div>
     <dialog className="project-lightbox" ref={dialogRef} aria-labelledby={headingId} aria-describedby={captionId} onClose={() => setActiveIndex(null)} onKeyDown={event => {
+      if (event.key === 'Tab') {
+        const controls = event.currentTarget.querySelectorAll<HTMLButtonElement>('button:not([disabled])');
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
       if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
         event.preventDefault();
         movePhoto(event.key === 'ArrowLeft' ? -1 : 1);
