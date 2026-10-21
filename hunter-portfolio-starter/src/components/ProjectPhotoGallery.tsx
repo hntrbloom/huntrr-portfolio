@@ -1,3 +1,4 @@
+import UiIcon from './UiIcon';
 import { useEffect, useId, useRef, useState } from 'react';
 import type { ProjectPhoto } from '../data';
 
@@ -34,7 +35,7 @@ export default function ProjectPhotoGallery({ photos, projectTitle }: { photos: 
       {photos.map((photo, index) => <figure className="project-photo" key={photo.src}>
         <button className="project-photo-button" type="button" aria-haspopup="dialog" aria-label={`Enlarge photo ${index + 1}: ${photo.caption}`} onClick={() => setActiveIndex(index)}>
           <img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" />
-          <span className="photo-enlarge" aria-hidden="true">↗</span>
+          <span className="photo-enlarge" aria-hidden="true"><UiIcon name="external" /></span>
         </button>
         <figcaption>{photo.caption}</figcaption>
       </figure>)}
