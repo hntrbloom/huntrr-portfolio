@@ -1,3 +1,4 @@
+import UiIcon from '../components/UiIcon';
 import { Link } from 'react-router';
 import { profile, projects } from '../data';
 import ProjectCard from '../components/ProjectCard';
@@ -31,6 +32,6 @@ export default function Home() {
     <RetroBox title="Little life updates" icon="✧" className="life-updates-box">
       <ul className="updates-list"><li><span aria-hidden="true">☆</span><div><Link to="/experience">A new chapter</Link><p>Associate of Applied Science, 2026.</p></div></li><li><span aria-hidden="true">♡</span><div><Link to="/skills">Always learning</Link><p>Software, AI, and hands-on engineering.</p></div></li></ul>
     </RetroBox>
-    <div className="guestbook-note"><span aria-hidden="true">✉</span><div><strong>Good ideas start with a hello.</strong><p>Have a project, opportunity, or something cool to share?</p></div><Link className="button" to="/contact">Say hello ↗</Link></div>
+    <div className="guestbook-note"><UiIcon name="mail" /><div><strong>Good ideas start with a hello.</strong><p>Have a project, opportunity, or something cool to share?</p></div><Link className="button" to="/contact">Say hello <UiIcon name="external" /></Link></div>
   </>;
 }
