@@ -1,6 +1,6 @@
 # Your first portfolio edits
 
-Your live site is now https://huntrr.space. Keep developing in this folder; see [DEPLOYMENT.md](DEPLOYMENT.md) for the VS Code → GitHub → Vercel workflow and dashboard settings. Use Node.js 24 LTS, and use pnpm 11.25.0 for dependency installation so the committed lockfile stays authoritative.
+Your live site is now https://huntrr.dev. Keep developing in this folder; see [DEPLOYMENT.md](DEPLOYMENT.md) for the VS Code → GitHub → Vercel workflow and dashboard settings. Use Node.js 24 LTS, and use pnpm 11.25.0 for dependency installation so the committed lockfile stays authoritative.
 
 ## Open your website
 

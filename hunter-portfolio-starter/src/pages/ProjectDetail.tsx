@@ -16,6 +16,7 @@ export default function ProjectDetail() {
       <div className="project-meta"><span>{project.category}</span><span>{project.yearLabel}</span></div>
       <h1 className="page-heading">{project.title}</h1><p className="section-description">{project.subtitle}</p>
       <div className="project-art detail-art"><ProjectArtwork project={project} index={index} /></div>
+      {project.screenshot && <a className="text-link" href={project.screenshot} target="_blank" rel="noreferrer">Open full-size screenshot ↗</a>}
       <h3>About this project</h3><p>{project.description}</p>
       <div className="tags">{project.stack.map(skill => <Badge key={skill} to="/skills">{skill}</Badge>)}</div>
       <h3 className="detail-subheading">Process & project notes</h3><ul className="project-notes">{project.notes.map(note => <li key={note}>{note}</li>)}</ul>

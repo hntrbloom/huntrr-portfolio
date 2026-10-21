@@ -1,6 +1,6 @@
 # GitHub and Vercel deployment
 
-The portfolio stays in this existing React, TypeScript, and Vite project. Production URL: https://huntrr.space. Git remote: `https://github.com/hntrbloom/huntrr-portfolio.git`.
+The portfolio stays in this existing React, TypeScript, and Vite project. Production URL: https://huntrr.dev. Git remote: `https://github.com/hntrbloom/huntrr-portfolio.git`.
 
 ## One-time Vercel dashboard settings
 
@@ -20,7 +20,7 @@ In **Settings → Environment Variables**, set `ENABLE_EXPERIMENTAL_COREPACK=1` 
 
 In **Settings → Git**, confirm the connected repository is `hntrbloom/huntrr-portfolio`. In **Settings → Environments → Production → Branch Tracking**, confirm `master`, the existing repository default branch. Pushes to that branch should create production deployments; other branches normally create previews.
 
-In **Settings → Domains**, confirm `huntrr.space` belongs to this project and points to Production. The canonical production URL is `https://huntrr.space`; preview deployments still use their Vercel preview URLs.
+In **Settings → Domains**, confirm `huntrr.dev` belongs to this project and points to Production. The canonical production URL is `https://huntrr.dev`; preview deployments still use their Vercel preview URLs.
 
 The tracked `vercel.json` specifies the framework, build command, output directory, and SPA rewrite. Vercel must use the correct Root Directory to discover that file. Do not set Root Directory to `dist`, or Output Directory to `hunter-portfolio-starter/dist` when the Root Directory is already `hunter-portfolio-starter`.
 
@@ -68,6 +68,7 @@ Verify each URL by opening it directly and refreshing:
 - `/projects/ai-data`
 - `/projects/business-tools`
 - `/projects/3d-printing`
+- `/projects/huntrr-workspace`
 - `/skills`
 - `/experience`
 - `/resume`
@@ -79,10 +80,10 @@ The scrapbook upload/caption editor is intentionally local. Saved gallery conten
 
 ## Custom domain and SEO
 
-`src/seo.ts` defines `https://huntrr.space` as the primary production URL, the page titles/descriptions, and the social preview image. Main routes are listed there; project routes are derived from the existing project data. Keep this list current when adding a page. Navigation and asset links remain relative to the site root; canonical URLs, Open Graph URLs, and sitemap entries deliberately use absolute HTTPS URLs.
+`src/seo.ts` defines `https://huntrr.dev` as the primary production URL, the page titles/descriptions, and the social preview image. Main routes are listed there; project routes are derived from the existing project data. Keep this list current when adding a page. Navigation and asset links remain relative to the site root; canonical URLs, Open Graph URLs, and sitemap entries deliberately use absolute HTTPS URLs.
 
 The Vite SEO plugin writes a small HTML entry for each real route, with its own canonical, Open Graph, and Twitter card metadata. These entries load the same React app and bundles. This lets crawlers read the metadata before executing JavaScript while preserving BrowserRouter navigation. `vercel.json` enables `cleanUrls` so `/about.html` is served at the existing `/about` URL. Its SPA fallback targets `/`, as required when `cleanUrls` is enabled. The app also updates metadata when navigating without a full page load; missing pages have no canonical and are marked `noindex`.
 
-The build generates `dist/sitemap.xml` for all 11 current pages. `public/robots.txt` permits crawling and points to `https://huntrr.space/sitemap.xml`. Run `npm run check:seo` after building to validate the generated HTML, sitemap, robots.txt, and social preview image. `public/social-preview.png` is the 1200×630 social card; its editable vector source is `public/social-preview.svg`.
+The build generates `dist/sitemap.xml` for all 12 current pages. `public/robots.txt` permits crawling and points to `https://huntrr.dev/sitemap.xml`. Run `npm run check:seo` after building to validate the generated HTML, sitemap, robots.txt, and social preview image. `public/social-preview.png` is the 1200×630 social card; its editable vector source is `public/social-preview.svg`.
 
-The custom domain is already connected to Production. No DNS or build-setting changes are needed for this metadata update. Optionally set an old-domain redirect in Vercel's Domains settings to consolidate visitors onto `huntrr.space`, preserving paths and query strings. Keep preview deployments accessible. After deployment, submit `https://huntrr.space/sitemap.xml` in Google Search Console if you manage that property.
+The custom domain is already connected to Production. No DNS or build-setting changes are needed for this metadata update. `huntrr.space` redirects to `huntrr.dev` in Vercel, preserving paths and query strings. Keep preview deployments accessible. After deployment, submit `https://huntrr.dev/sitemap.xml` in Google Search Console if you manage that property.
