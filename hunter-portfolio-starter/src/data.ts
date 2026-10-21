@@ -28,13 +28,12 @@ export const printing = {
 };
 
 export const japanTrip = {
-  title: 'Beyond the Screen: My Solo Trip to Japan',
-  subtitle: 'Two weeks, one unforgettable experience.',
+  title: 'Two Weeks in Japan',
+  subtitle: 'A shared adventure at 18.',
+  photo: '/images/japan-trip-with-friend.jpg',
+  photoAlt: 'Two friends posing for a nighttime photo outdoors during their trip to Japan.',
   story: [
-    'One of the most meaningful experiences of my life was taking a two-week solo trip to Japan. Traveling to another country on my own opened my eyes to just how big and diverse the world really is.',
-    'Being somewhere completely unfamiliar gave me the opportunity to experience a different culture, become more independent, and see life from a perspective outside of what I had always known.',
-    'The experience reminded me that there is so much more to the world than what we encounter in our everyday lives. It strengthened my curiosity, encouraged me to embrace unfamiliar experiences, and inspired me to keep exploring, learning, and growing.',
-    'Japan will always hold a special place in my heart, not just because of the trip itself, but because of how much it changed the way I see the world.',
+    'At 18, I spent two weeks exploring Japan with a friend. We visited Tokyo, Kamakura, Kanazawa, Takayama, Kyoto, Osaka, and Hakone—an experience that broadened my perspective and gave me memories I’ll always carry with me.',
   ],
 };
 

@@ -132,22 +132,25 @@ export default function JapanScrapbook() {
   }
 
   return <RetroBox title={japanTrip.title} icon="✿" className="japan-scrapbook" id="japan-scrapbook">
-    <div className="japan-intro"><div><span className="pixel-label">A PAGE FROM MY SCRAPBOOK</span><p className="japan-subtitle">{japanTrip.subtitle}</p></div><span className="japan-stamp" aria-hidden="true">JAPAN<br /><span>日本</span><br />2 weeks · solo</span></div>
-    <div className="japan-story">{japanTrip.story.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
-    <div className="japan-keepsakes" aria-label="Reflections from the trip"><span>♡ independence</span><span>✧ a new perspective</span><span>☆ curiosity, everywhere</span></div>
+    <div className="japan-intro"><div><span className="pixel-label">A PAGE FROM MY SCRAPBOOK</span><p className="japan-subtitle">{japanTrip.subtitle}</p></div><span className="japan-stamp" aria-hidden="true">JAPAN<br /><span>日本</span><br />2 weeks · friends</span></div>
+    <div className="japan-story-layout">
+      <figure className="japan-trip-photo"><img src={japanTrip.photo} alt={japanTrip.photoAlt} width="640" height="480" loading="lazy" /><figcaption>Two weeks of shared memories ♡</figcaption></figure>
+      <div className="japan-story">{japanTrip.story.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+    </div>
+    <div className="japan-keepsakes" aria-label="Reflections from the trip"><span>♡ shared memories</span><span>✧ a new perspective</span><span>☆ curiosity, everywhere</span></div>
     <div className="japan-gallery-heading"><div><h3>Postcards from Japan</h3><p>Little moments from an unforgettable adventure.</p></div><span aria-hidden="true">✧ ♡ ✧</span></div>
     {photos.length > 0 ? <div className="japan-photo-grid">
       {photos.map((photo, index) => <figure className="japan-polaroid" key={photo.id}>
         <span className="scrapbook-tape" aria-hidden="true" />
         <button className="japan-photo-button" type="button" aria-haspopup="dialog" aria-label={`Enlarge Japan photo ${index + 1}${photo.caption ? `: ${photo.caption}` : ''}`} onClick={() => setActiveId(photo.id)}>
-          <img src={photo.src} alt={photo.caption || `A moment from Hunter's solo trip to Japan, photo ${index + 1}`} loading="lazy" width="640" height="480" />
+          <img src={photo.src} alt={photo.caption || `A moment from Hunter's trip to Japan with a friend, photo ${index + 1}`} loading="lazy" width="640" height="480" />
           <span className="photo-enlarge" aria-hidden="true">↗</span>
         </button>
         <figcaption>{editing && import.meta.env.DEV ? <><label className="sr-only" htmlFor={`caption-${photo.id}`}>Caption for photo {index + 1}</label><input id={`caption-${photo.id}`} className="photo-caption-input" placeholder="A little memory…" maxLength={240} value={draftCaptions[photo.id] ?? photo.caption} disabled={saving} onChange={event => setDraftCaptions(previous => ({ ...previous, [photo.id]: event.target.value }))} /><button className="photo-remove" type="button" disabled={saving} onClick={() => removePhoto(photo.id)}>Remove photo</button></> : <span>{photo.caption || 'a little moment, a lasting memory ♡'}</span>}</figcaption>
       </figure>)}
     </div> : <div className="japan-empty-gallery">
       <div className="empty-polaroids" aria-hidden="true">{['♡', '✧', '☆'].map(icon => <div className="empty-polaroid" key={icon}><span className="scrapbook-tape" /><span className="empty-photo">{icon}</span><span className="empty-caption">a memory to keep</span></div>)}</div>
-      <p>Room for a few favorite memories.<br /><span>Photos from my trip are coming soon.</span></p>
+      <p>Room for a few more favorite memories.<br /><span>More photos from the trip are coming soon.</span></p>
     </div>}
     {import.meta.env.DEV && <div className="japan-editor">
       <button className="text-link scrapbook-edit-toggle" type="button" disabled={saving || Object.keys(draftCaptions).length > 0} onClick={() => setEditing(!editing)} aria-expanded={editing} aria-controls="japan-photo-editor">{editing ? 'Close photo editor' : '✎ Edit my scrapbook'}</button>
@@ -161,7 +164,7 @@ export default function JapanScrapbook() {
     <p className="japan-signoff">a piece of the world, always with me. <span aria-hidden="true">♡</span></p>
     <dialog className="japan-lightbox" ref={dialogRef} aria-labelledby="japan-lightbox-heading" aria-describedby="japan-lightbox-caption" onClose={() => setActiveId(null)} onCancel={() => setActiveId(null)} onKeyDown={lightboxKeyDown} onClick={event => { if (event.target === event.currentTarget) dialogRef.current?.close(); }}>
       {activePhoto && <div className="japan-lightbox-content"><div className="japan-lightbox-toolbar"><h3 id="japan-lightbox-heading">Postcards from Japan</h3><button type="button" className="icon-button" aria-label="Close enlarged photo" autoFocus onClick={() => dialogRef.current?.close()}>×</button></div>
-        <img className="japan-lightbox-image" src={activePhoto.src} alt={activePhoto.caption || `A moment from Hunter's solo trip to Japan, photo ${activeIndex + 1}`} />
+        <img className="japan-lightbox-image" src={activePhoto.src} alt={activePhoto.caption || `A moment from Hunter's trip to Japan with a friend, photo ${activeIndex + 1}`} />
         <div className="japan-lightbox-footer">{photos.length > 1 && <button className="button" type="button" onClick={() => movePhoto(-1)} aria-label="Previous photo">←</button>}<div aria-live="polite"><p id="japan-lightbox-caption">{activePhoto.caption || 'a little moment, a lasting memory ♡'}</p><span>{activeIndex + 1} / {photos.length}</span></div>{photos.length > 1 && <button className="button" type="button" onClick={() => movePhoto(1)} aria-label="Next photo">→</button>}</div>
       </div>}
     </dialog>

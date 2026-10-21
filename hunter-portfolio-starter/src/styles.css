@@ -456,6 +456,11 @@ a.badge:hover { border-color: var(--gray); background: var(--lavender-fill); tex
 .japan-stamp > span { font: 20px/1 Georgia, serif; }
 .japan-story { margin: 20px 0; font-size: 13px; line-height: 1.95; }
 .japan-story p + p { margin-top: 15px; }
+.japan-story-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: 22px; margin: 22px 0; }
+.japan-story-layout .japan-story { min-width: 0; margin: 0; }
+.japan-trip-photo { min-width: 0; margin: 0; padding: 8px; border: 1px solid var(--gray); border-radius: 2px; background: var(--panel-2); }
+.japan-trip-photo img { display: block; width: 100%; height: auto; }
+.japan-trip-photo figcaption { padding: 10px 2px 3px; text-align: center; color: var(--accent); font: italic 12px/1.5 Georgia, serif; }
 .japan-keepsakes { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 23px; }
 .japan-keepsakes > span { background: var(--panel-2); border: 1px solid var(--border); border-radius: 2px; color: var(--accent); font: 10px/1.5 'Courier New', monospace; padding: 4px 8px; }
 .japan-keepsakes > span:nth-child(2) { background: var(--lavender-fill); }
@@ -517,6 +522,7 @@ a.badge:hover { border-color: var(--gray); background: var(--lavender-fill); tex
 @media (max-width: 780px) {
   .japan-scrapbook .box-body { padding: 17px; }
   .japan-intro { align-items: start; gap: 12px; }
+  .japan-story-layout { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .japan-subtitle { font-size: 21px; }
   .japan-stamp { width: 65px; height: 65px; font-size: 6px; }
   .japan-stamp > span { font-size: 17px; }
