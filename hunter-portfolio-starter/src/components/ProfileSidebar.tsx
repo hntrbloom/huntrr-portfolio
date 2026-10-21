@@ -11,7 +11,29 @@ export default function ProfileSidebar() {
         <img className="profile-avatar" src={profile.avatar || '/avatar.svg'} alt={profile.avatar ? `${profile.firstName}'s avatar` : 'Pixel laptop with a heart, Hunter’s illustrated avatar'} width="112" height="112" />
         <div><p className="profile-role">{profile.role}</p><p className="profile-location">⌖ {profile.location}</p><span className="online-label"><span aria-hidden="true">✦</span> Robot-like</span></div>
       </div>
-      <dl className="profile-status"><div><dt>Mood:</dt><dd>Focused &amp; determined <span aria-hidden="true">♡</span></dd></div><div><dt>Here for:</dt><dd>Building & learning</dd></div></dl>
+      <dl className="profile-status">
+        <div><dt>Mood:</dt><dd>Focused &amp; determined <span aria-hidden="true">♡</span></dd></div>
+        <div><dt>Here for:</dt><dd>Building &amp; learning</dd></div>
+        <div><dt>Currently:</dt><dd>Building my portfolio &amp; expanding my skills</dd></div>
+        <div><dt>Passion:</dt><dd>Turning ideas into real projects</dd></div>
+        <div><dt>Interests:</dt><dd>Coding, robotics &amp; 3D design</dd></div>
+      </dl>
+      <details className="profile-more">
+        <summary>✧ more about me <span aria-hidden="true">＋</span></summary>
+        <dl className="profile-extra-status">
+          <div><dt>Creative side:</dt><dd>Designing &amp; 3D printing cute things</dd></div>
+          <div><dt>Tech stack:</dt><dd>Python, React, TypeScript &amp; Java</dd></div>
+          <div><dt>Learning:</dt><dd>Computer engineering &amp; new technologies</dd></div>
+          <div><dt>Fun fact:</dt><dd>I own a 3D printer ♡</dd></div>
+          <div><dt>Next chapter:</dt><dd>Pursuing my bachelor's in computer engineering @ ISU</dd></div>
+          <div><dt>Favorite part of coding:</dt><dd>Seeing my ideas come to life</dd></div>
+          <div><dt>Always:</dt><dd>Curious &amp; creating something new</dd></div>
+          <div><dt>Currently obsessed with:</dt><dd>Coding my next big idea</dd></div>
+          <div><dt>Making:</dt><dd>Little things from scratch</dd></div>
+          <div><dt>Favorite things:</dt><dd>Software, robotics &amp; 3D printing</dd></div>
+          <div><dt>Digital &amp; physical:</dt><dd>I love making things both digital &amp; physical ☆</dd></div>
+        </dl>
+      </details>
     </RetroBox>
     <RetroBox title="Contacting Hunter" icon="✉" className="contacting-box">
       <div className="profile-links">
