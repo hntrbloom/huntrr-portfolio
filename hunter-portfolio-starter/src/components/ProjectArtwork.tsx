@@ -1,6 +1,8 @@
 import type { Project } from '../data';
 
-export default function ProjectArtwork({ project, index }: { project: Project; index: number }) {
+export default function ProjectArtwork({ project, index, variant = 'card' }: { project: Project; index: number; variant?: 'card' | 'detail' }) {
+  const preview = variant === 'card' ? project.photos?.[0] : undefined;
+  if (preview) return <img src={preview.src} alt={preview.alt} width={preview.width} height={preview.height} loading="lazy" />;
   if (project.screenshot) return <img src={project.screenshot} alt={`${project.title} preview`} loading="lazy" />;
   return <div className={`project-art-content art-${index % 4}`} aria-hidden="true">
     <span className="art-star star-one">✧</span><span className="art-star star-two">✦</span>

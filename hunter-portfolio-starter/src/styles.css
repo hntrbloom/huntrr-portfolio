@@ -540,6 +540,27 @@ a.badge:hover { border-color: var(--gray); background: var(--lavender-fill); tex
   .empty-caption { font-size: 7px; }
   .japan-gallery-heading > span { display: none; }
 }
+.project-photo-gallery { margin-top: 24px; padding-top: 20px; border-top: 1px dotted var(--gray); }
+.project-photo-gallery > h3 { margin-bottom: 5px; }
+.project-gallery-help { color: var(--muted); font-size: 11px; }
+.project-photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); align-items: start; gap: 16px; }
+.project-photo { margin: 0; padding: 8px; border: 1px solid var(--gray); border-radius: 3px; background: var(--panel-2); min-width: 0; }
+.project-photo-button { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--border); background: var(--panel); }
+.project-photo-button img { display: block; width: 100%; height: auto; }
+.project-photo-button:hover .photo-enlarge { background: var(--lavender-fill); }
+.project-photo figcaption { padding: 10px 2px 2px; color: var(--accent); text-align: center; font: italic 12px/1.6 Georgia, serif; }
+.project-lightbox { width: min(1040px, calc(100% - 24px)); max-width: calc(100% - 24px); max-height: calc(100dvh - 24px); padding: 0; border: 1px solid var(--gray); border-radius: 3px; background: var(--panel); color: var(--text); }
+.project-lightbox::backdrop { background: rgb(75 69 79 / 85%); }
+.project-lightbox-content { padding: 14px; }
+.project-lightbox-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 12px; }
+.project-lightbox-toolbar h3 { margin: 0; font-size: 12px; }
+.project-lightbox-toolbar .icon-button { flex-shrink: 0; min-width: 44px; min-height: 44px; }
+.project-lightbox-image { display: block; width: 100%; height: auto; max-height: calc(100dvh - 210px); object-fit: contain; background: var(--panel-2); }
+.project-lightbox-footer { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.project-lightbox-footer .button { min-width: 44px; min-height: 44px; }
+.project-lightbox-footer > div { flex: 1; min-width: 0; text-align: center; }
+.project-lightbox-footer p { margin: 0 0 4px; color: var(--accent); font: italic 13px/1.5 Georgia, serif; overflow-wrap: anywhere; }
+.project-lightbox-footer span { color: var(--muted); font: 10px 'Courier New', monospace; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
