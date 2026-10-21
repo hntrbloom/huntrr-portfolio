@@ -116,6 +116,13 @@ svg { vertical-align: middle; }
 .profile-status > div { display: flex; gap: 6px; margin: 2px 0; }
 .profile-status dt { font-weight: bold; color: var(--heading); }
 .profile-status dd { margin: 0; }
+.ui-icon { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -0.12em; stroke: currentColor; }
+.icon-button .ui-icon { width: 20px; height: 20px; }
+.box-heading .ui-icon { width: 1.15em; height: 1.15em; }
+.profile-links .ui-icon { width: 1.15em; height: 1.15em; }
+.photo-enlarge .ui-icon { width: 16px; height: 16px; }
+.contact-placeholder .ui-icon, .guestbook-note > .ui-icon { width: 1.2em; height: 1.2em; }
+
 /* Extra personal notes are tucked away on small screens, without losing any details. */
 .profile-more { border-top: 1px dotted var(--gray); padding-top: 11px; margin-top: 8px; }
 .profile-more summary {
