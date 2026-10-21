@@ -16,7 +16,7 @@ export default function ProjectDetail() {
     <RetroBox title="From Hunter's workbench" icon="▧">
       <div className="project-meta"><span>{project.category}</span><span>{project.yearLabel}</span></div>
       <h1 className="page-heading">{project.title}</h1><p className="section-description">{project.subtitle}</p>
-      <div className="project-art detail-art"><ProjectArtwork project={project} index={index} variant="detail" /></div>
+      <div className="project-art detail-art"><ProjectArtwork project={project} variant="detail" /></div>
       {project.screenshot && <a className="text-link" href={project.screenshot} target="_blank" rel="noreferrer">Open full-size screenshot ↗</a>}
       <h3>About this project</h3><p>{project.description}</p>
       <div className="tags">{project.stack.map(skill => <Badge key={skill} to="/skills">{skill}</Badge>)}</div>

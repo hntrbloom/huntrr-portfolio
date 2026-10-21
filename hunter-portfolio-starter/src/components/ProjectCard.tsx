@@ -9,7 +9,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
   return (
     <article className="project-card">
       <Link className={`project-art project-art-${(index % 4) + 1}`} to={`/projects/${project.id}`} aria-label={`View ${project.title} details`}>
-        <ProjectArtwork project={project} index={index} />
+        <ProjectArtwork project={project} />
       </Link>
       <div className="project-content">
         <div className="project-meta"><span>{project.category}</span><span>{project.yearLabel}</span></div>

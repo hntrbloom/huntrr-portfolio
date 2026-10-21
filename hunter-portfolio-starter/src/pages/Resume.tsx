@@ -8,7 +8,7 @@ export default function Resume() {
       <p className="section-label">RÉSUMÉ / AT A GLANCE</p>
       <h1 className="page-heading">A little more <em>background.</em></h1>
       <p>I’m Hunter Bloom, an aspiring computer engineer with hands-on experience in software development, applied AI, data analysis, and technical troubleshooting.</p>
-      <p>My background includes an Applied AI & Data Science internship at Ames National Laboratory, building a custom business management web application, and an associate degree from Des Moines Area Community College.</p>
+      <p>My background includes an Applied AI & Data Science internship at Ames National Laboratory, independent software projects, and an associate degree from Des Moines Area Community College.</p>
       <div className="resume-actions">
         <a className="button button-primary" href={profile.resume} download="Hunter_Bloom_Public_Resume.pdf">Download Résumé ↓</a>
         <a className="button" href={profile.resume} target="_blank" rel="noreferrer">View Full Résumé ↗</a>
