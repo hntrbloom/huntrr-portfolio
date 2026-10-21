@@ -40,6 +40,14 @@ export const japanTrip = {
 
 export type Category = 'Software' | 'AI & Data' | 'Making';
 
+export type ProjectPhoto = {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -52,6 +60,7 @@ export type Project = {
   demoUrl?: string;
   codeUrl?: string;
   screenshot?: string; // Example: '/images/huntrr-space.png' in /public/images
+  photos?: ProjectPhoto[];
 };
 
 export const projects: Project[] = [
@@ -135,6 +144,26 @@ export const projects: Project[] = [
     ],
     codeUrl: 'https://github.com/hntrbloom/huntrr-workspace',
     screenshot: '/images/huntrr-workspace.png',
+    photos: [
+      {
+        src: '/images/huntrr-workspace-japan-shrine-selfie.jpg',
+        alt: 'A selfie in front of a traditional Japanese gate, with stone steps and trees in the background.',
+        caption: 'At the shrine steps',
+        width: 2880, height: 2160,
+      },
+      {
+        src: '/images/huntrr-workspace-japan-instant-prints.jpg',
+        alt: 'Two instant photo prints on a wooden table, showing a Japanese garden with a pond and a white castle.',
+        caption: 'Garden and castle keepsakes',
+        width: 2944, height: 2160,
+      },
+      {
+        src: '/images/huntrr-workspace-japan-night-car.jpg',
+        alt: 'A traveler standing beside a white sports car on a city street in Japan at night.',
+        caption: 'City lights and a white sports car',
+        width: 2267, height: 2160,
+      },
+    ],
   },
 ];
 
