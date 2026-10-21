@@ -251,6 +251,16 @@ a.badge:hover { border-color: var(--gray); background: var(--lavender-fill); tex
 .filter-result { color: var(--muted); font-size: 9px; margin-bottom: 13px; }
 .about-grid { display: grid; gap: 5px; }
 .about-copy p { line-height: 1.95; }
+.printing-section .box-heading { background: var(--lavender-fill); }
+.printing-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: 22px; }
+.printing-photo { margin: 0; min-width: 0; padding: 8px; border: 1px solid var(--gray); border-radius: 2px; background: var(--panel-2); }
+.printing-photo img { display: block; width: 100%; height: auto; border-radius: 1px; }
+.printing-photo figcaption { padding: 10px 2px 3px; text-align: center; color: var(--accent); font: italic 12px/1.5 Georgia, serif; }
+.printing-copy { min-width: 0; }
+.printing-story { font-size: 13px; line-height: 1.9; }
+.printing-skills { list-style: none; padding: 0; margin: 17px 0; }
+.printing-skills .badge { text-align: center; }
+.printing-skills li:nth-child(even) .badge { background: var(--lavender-fill); }
 .retro-box .box-body > h2 { font: 25px Georgia, serif; margin-bottom: 18px; }
 .experience-list { border-top: 1px solid var(--border); }
 .experience-row { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 12px; padding: 20px 0; border-bottom: 1px solid var(--border); }
@@ -339,6 +349,8 @@ a.badge:hover { border-color: var(--gray); background: var(--lavender-fill); tex
   .project-art-content { padding-inline: 14px; }
 }
 @media (max-width: 780px) {
+  .printing-layout { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .printing-photo { width: min(100%, 360px); justify-self: center; }
   .shell { width: calc(100% - 32px); }
   .site { padding-top: 16px; }
   .header-tagline { display: none; }

@@ -21,6 +21,12 @@ export const profile = {
   currentlyWorkingOn: 'A custom web application to organize NailsByHuntrr products, files, tasks, and creative projects.',
 };
 
+export const printing = {
+  photo: '/images/bambu-lab-a1.jpg',
+  paragraph: 'I got my first 3D printer in March 2026 and quickly became interested in creating my own designs. Since then, I’ve learned how to turn ideas into physical objects through 3D modeling, slicing, multicolor printing, testing, and troubleshooting. Each project gives me a chance to improve a design, solve technical problems, and learn more about how digital designs become real products.',
+  skills: ['Bambu Lab A1', '3D Modeling', 'Rapid Prototyping', 'Troubleshooting'],
+};
+
 export const japanTrip = {
   title: 'Beyond the Screen: My Solo Trip to Japan',
   subtitle: 'Two weeks, one unforgettable experience.',
