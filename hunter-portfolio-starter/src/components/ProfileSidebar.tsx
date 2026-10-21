@@ -1,3 +1,4 @@
+import UiIcon from './UiIcon';
 import { Link } from 'react-router';
 import { profile } from '../data';
 import RetroBox, { Badge } from './RetroBox';
@@ -35,12 +36,12 @@ export default function ProfileSidebar() {
         </dl>
       </details>
     </RetroBox>
-    <RetroBox title="Contacting Hunter" icon="✉" className="contacting-box">
+    <RetroBox title="Contacting Hunter" icon={<UiIcon name="mail" />} className="contacting-box">
       <div className="profile-links">
-        <Link to="/contact"><span aria-hidden="true">✉</span> Say hello</Link>
+        <Link to="/contact"><span aria-hidden="true"><UiIcon name="mail" /></span> Say hello</Link>
         <Link to="/projects"><span aria-hidden="true">▧</span> View projects</Link>
-        {profile.github && <a href={profile.github} target="_blank" rel="noreferrer"><span aria-hidden="true">⌘</span> GitHub ↗</a>}
-        {profile.linkedin && <a href={profile.linkedin} target="_blank" rel="noreferrer"><span aria-hidden="true">▣</span> LinkedIn ↗</a>}
+        {profile.github && <a href={profile.github} target="_blank" rel="noreferrer"><span aria-hidden="true">⌘</span> GitHub <UiIcon name="external" /></a>}
+        {profile.linkedin && <a href={profile.linkedin} target="_blank" rel="noreferrer"><span aria-hidden="true">▣</span> LinkedIn <UiIcon name="external" /></a>}
         <Link to="/resume"><span aria-hidden="true">▤</span> View résumé</Link>
       </div>
     </RetroBox>
