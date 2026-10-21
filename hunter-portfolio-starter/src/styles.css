@@ -468,7 +468,7 @@ a.badge:hover { border-color: var(--gray); background: var(--lavender-fill); tex
 .scrapbook-tape { position: absolute; z-index: 1; top: -9px; left: calc(50% - 23px); width: 46px; height: 17px; border: 1px solid var(--border); background: var(--lavender-fill); transform: rotate(-5deg); pointer-events: none; }
 .japan-polaroid:nth-child(even) .scrapbook-tape { background: var(--header-fill); transform: rotate(5deg); }
 .japan-photo-button { display: block; position: relative; width: 100%; border: 1px solid var(--border); padding: 0; background: var(--panel-2); overflow: hidden; border-radius: 1px; }
-.japan-photo-button img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.japan-photo-button img { display: block; width: 100%; height: auto; object-fit: contain; }
 .photo-enlarge { position: absolute; bottom: 5px; right: 5px; display: grid; place-items: center; width: 25px; height: 25px; background: var(--panel); color: var(--accent); border: 1px solid var(--gray); font-size: 17px; border-radius: 2px; }
 .japan-photo-button:hover .photo-enlarge { background: var(--lavender-fill); }
 .japan-polaroid figcaption { padding: 12px 1px 13px; color: var(--accent); text-align: center; font: italic 12px/1.6 Georgia, serif; overflow-wrap: anywhere; }
