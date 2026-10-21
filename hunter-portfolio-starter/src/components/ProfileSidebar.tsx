@@ -9,7 +9,7 @@ export default function ProfileSidebar() {
       <p className="profile-quote">“{profile.headline} {profile.headlineHighlight}”</p>
       <div className="profile-intro">
         <img className="profile-avatar" src={profile.avatar || '/avatar.svg'} alt={profile.avatar ? `${profile.firstName}'s avatar` : 'Pixel laptop with a heart, Hunter’s illustrated avatar'} width="112" height="112" />
-        <div><p className="profile-role">{profile.role}</p><p className="profile-location">⌖ {profile.location}</p><span className="online-label"><span aria-hidden="true">✦</span> Enjoys things like robotics</span></div>
+        <div><p className="profile-role">{profile.role}</p><p className="profile-location">⌖ {profile.location}</p><span className="online-label"><span aria-hidden="true">✦</span> Robot-like</span></div>
       </div>
       <dl className="profile-status"><div><dt>Mood:</dt><dd>Focused &amp; determined <span aria-hidden="true">♡</span></dd></div><div><dt>Here for:</dt><dd>Building & learning</dd></div></dl>
     </RetroBox>
