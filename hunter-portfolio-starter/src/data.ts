@@ -18,7 +18,6 @@ export const profile = {
   resume: '/resume/Hunter_Bloom_Public_Resume.pdf',
   avatar: '', // Optional: '/images/profile.jpg'; otherwise use the illustrated laptop.
   mood: 'Inspired & a little caffeinated',
-  currentlyWorkingOn: 'A custom web application to organize NailsByHuntrr products, files, tasks, and creative projects.',
 };
 
 export const printing = {
@@ -58,28 +57,11 @@ export type Project = {
   notes: string[];
   demoUrl?: string;
   codeUrl?: string;
-  screenshot?: string; // Example: '/images/huntrr-space.png' in /public/images
+  screenshot?: string; // Public image path for the project screenshot.
   photos?: ProjectPhoto[];
 };
 
 export const projects: Project[] = [
-  {
-    id: 'huntrr-space',
-    title: 'huntrr-Space',
-    category: 'Software',
-    yearLabel: 'Personal web app',
-    subtitle: 'A custom business management web application for NailsByHuntrr',
-    description:
-      'A practical workspace for organizing business information, products and designs, photographs and files, tasks and appointments, and 3D-printing projects across desktop and mobile devices.',
-    stack: ['React', 'TypeScript', 'Firebase', 'Google Cloud', 'Google Drive integration', 'GitHub'],
-    notes: [
-      'Develop and maintain the application alongside the daily operations of my creative business.',
-      'Integrate cloud services and Google Drive to organize photographs, files, and business information.',
-      'Troubleshoot authentication issues and data persistence, including cases where information does not save as expected.',
-      'Debug image uploads, duplicate records, and cross-device synchronization problems.',
-      'Test mobile responsiveness and functionality across desktop and mobile devices as the application evolves.',
-    ],
-  },
   {
     id: 'ai-data',
     title: 'AI & Data Science Work',
@@ -207,17 +189,12 @@ export const experiences: ExperienceEntry[] = [
     organization: 'NailsByHuntrr',
     role: 'Small Business Owner / Creative Product Designer',
     dates: '2024 – Present',
-    description: 'I operate a creative small business specializing in custom press-on nails, keychains, and 3D-printed products. I also develop software applications to organize daily operations.',
+    description: 'I operate a creative small business specializing in custom press-on nails, keychains, and 3D-printed products.',
     responsibilities: [
       'Design and create physical products, manage online product listings, and run business operations.',
-      'Develop and maintain a custom web application using React, TypeScript, and Firebase.',
-      'Integrate Google Cloud and Google Drive services.',
-      'Troubleshoot authentication and data-saving issues.',
-      'Debug image uploading and synchronization problems.',
-      'Test functionality across desktop and mobile devices.',
       'Use spreadsheets and automation tools.',
     ],
-    skills: ['React', 'TypeScript', 'Firebase', 'Google Cloud', 'GitHub', 'Debugging', 'Automation'],
+    skills: ['Product Design', 'Small Business Management', 'Spreadsheets', 'Automation'],
   },
   {
     organization: "Jimmy John's",

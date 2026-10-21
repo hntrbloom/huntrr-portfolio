@@ -32,10 +32,6 @@ export default function ProfileSidebar() {
         <div><dt>Favorite technologies</dt><dd><div className="tags">{['React', 'TypeScript', 'Python', 'Firebase'].map(skill => <Badge to="/skills" key={skill}>{skill}</Badge>)}</div></dd></div>
       </dl>
     </RetroBox>
-    <RetroBox title="Currently working on" icon="⌨" className="working-box">
-      <Link className="working-project" to="/projects/huntrr-space">huntrr-Space <span aria-hidden="true">↗</span></Link>
-      <p>{profile.currentlyWorkingOn}</p><Badge to="/projects/huntrr-space">✧ work in progress</Badge>
-    </RetroBox>
     <div className="sidebar-stickers" aria-label="Site badges"><Badge to="/skills">&lt;/&gt; made with React</Badge><Badge to="/about">♡ stay curious</Badge></div>
   </aside>;
 }

@@ -5,7 +5,7 @@ import { preview } from 'vite';
 const dist = new URL('../dist/', import.meta.url);
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-assert.equal(urls.length, 12, 'Sitemap should include all seven main pages and five project pages');
+assert.equal(urls.length, 11, 'Sitemap should include all seven main pages and four project pages');
 assert.ok(urls.includes('https://huntrr.dev/projects/huntrr-workspace'), 'Sitemap should include huntrr-workspace');
 assert.equal(new Set(urls).size, urls.length, 'Sitemap should not repeat pages');
 

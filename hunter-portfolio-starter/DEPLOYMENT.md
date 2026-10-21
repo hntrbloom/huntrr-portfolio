@@ -64,7 +64,6 @@ Verify each URL by opening it directly and refreshing:
 - `/`
 - `/about`
 - `/projects`
-- `/projects/huntrr-space`
 - `/projects/ai-data`
 - `/projects/business-tools`
 - `/projects/3d-printing`
@@ -84,6 +83,6 @@ The scrapbook upload/caption editor is intentionally local. Saved gallery conten
 
 The Vite SEO plugin writes a small HTML entry for each real route, with its own canonical, Open Graph, and Twitter card metadata. These entries load the same React app and bundles. This lets crawlers read the metadata before executing JavaScript while preserving BrowserRouter navigation. `vercel.json` enables `cleanUrls` so `/about.html` is served at the existing `/about` URL. Its SPA fallback targets `/`, as required when `cleanUrls` is enabled. The app also updates metadata when navigating without a full page load; missing pages have no canonical and are marked `noindex`.
 
-The build generates `dist/sitemap.xml` for all 12 current pages. `public/robots.txt` permits crawling and points to `https://huntrr.dev/sitemap.xml`. Run `npm run check:seo` after building to validate the generated HTML, sitemap, robots.txt, and social preview image. `public/social-preview.png` is the 1200×630 social card; its editable vector source is `public/social-preview.svg`.
+The build generates `dist/sitemap.xml` for all 11 current pages. `public/robots.txt` permits crawling and points to `https://huntrr.dev/sitemap.xml`. Run `npm run check:seo` after building to validate the generated HTML, sitemap, robots.txt, and social preview image. `public/social-preview.png` is the 1200×630 social card; its editable vector source is `public/social-preview.svg`.
 
-The custom domain is already connected to Production. No DNS or build-setting changes are needed for this metadata update. `huntrr.space` redirects to `huntrr.dev` in Vercel, preserving paths and query strings. Keep preview deployments accessible. After deployment, submit `https://huntrr.dev/sitemap.xml` in Google Search Console if you manage that property.
+The custom domain is already connected to Production. No DNS or build-setting changes are needed for this metadata update. Keep preview deployments accessible. After deployment, submit `https://huntrr.dev/sitemap.xml` in Google Search Console if you manage that property.

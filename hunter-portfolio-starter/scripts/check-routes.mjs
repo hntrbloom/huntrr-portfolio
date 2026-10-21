@@ -24,6 +24,7 @@ try {
   assert.deepEqual(seoPages.map(page => page.path).sort(), pages.map(([path]) => path).filter(path => !path.includes('missing')).sort(), 'Every real route should have SEO metadata and a sitemap entry');
   for (const [path, content] of pages) {
     const markup = render(path);
+    assert.ok(!/huntrr[. _-]space/i.test(markup), `${path} should not advertise the removed project or old domain`);
     assert.ok(markup.includes(content), `${path} should render its own content`);
     assert.equal((markup.match(/<h1[ >]/g) || []).length, 1, `${path} should have one primary heading`);
     for (const href of ['/', '/about', '/projects', '/skills', '/experience', '/contact', '/resume']) {

@@ -24,18 +24,13 @@ export default function Home() {
         <div><dt>Résumé</dt><dd>Experience, education, and skills in one place.<a href={profile.resume} download="Hunter_Bloom_Public_Resume.pdf">Download Résumé ↓</a></dd></div>
       </dl>
     </RetroBox>
-    <RetroBox title="Featured projects" icon="▧" action={<Link to="/projects">view all ({projects.length}) →</Link>} className="featured-box">
-      <p className="box-intro">A few things from my digital workbench.</p>
-      <div className="projects-grid featured-projects">{projects.filter(project => ['huntrr-space', 'huntrr-workspace'].includes(project.id)).map(project => <ProjectCard key={project.id} project={project} index={projects.indexOf(project)} />)}</div>
+    <RetroBox title="Featured project" icon="▧" action={<Link to="/projects">view all ({projects.length}) →</Link>} className="featured-box">
+      <p className="box-intro">From my digital workbench.</p>
+      <div className="projects-grid featured-projects">{projects.filter(project => project.id === 'huntrr-workspace').map(project => <ProjectCard key={project.id} project={project} index={projects.indexOf(project)} />)}</div>
     </RetroBox>
-    <div className="home-bottom-grid">
-      <RetroBox title="On my workbench" icon="⌨">
-        <Badge>in progress</Badge><h3 className="workbench-title"><Link to="/projects/huntrr-space">huntrr-Space ↗</Link></h3><p>{profile.currentlyWorkingOn}</p><Link className="text-link" to="/projects/huntrr-space">Peek at the project →</Link>
-      </RetroBox>
-      <RetroBox title="Little life updates" icon="✧">
-        <ul className="updates-list"><li><span aria-hidden="true">▧</span><div><Link to="/projects/huntrr-space">Building huntrr-Space</Link><p>Making room for more creative ideas.</p></div></li><li><span aria-hidden="true">☆</span><div><Link to="/experience">A new chapter</Link><p>Associate of Applied Science, 2026.</p></div></li><li><span aria-hidden="true">♡</span><div><Link to="/skills">Always learning</Link><p>Software, AI, and hands-on engineering.</p></div></li></ul>
-      </RetroBox>
-    </div>
+    <RetroBox title="Little life updates" icon="✧" className="life-updates-box">
+      <ul className="updates-list"><li><span aria-hidden="true">☆</span><div><Link to="/experience">A new chapter</Link><p>Associate of Applied Science, 2026.</p></div></li><li><span aria-hidden="true">♡</span><div><Link to="/skills">Always learning</Link><p>Software, AI, and hands-on engineering.</p></div></li></ul>
+    </RetroBox>
     <div className="guestbook-note"><span aria-hidden="true">✉</span><div><strong>Good ideas start with a hello.</strong><p>Have a project, opportunity, or something cool to share?</p></div><Link className="button" to="/contact">Say hello ↗</Link></div>
   </>;
 }
