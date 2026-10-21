@@ -117,6 +117,25 @@ export const projects: Project[] = [
       'Show before-and-after print photos to demonstrate your process.',
     ],
   },
+  {
+    id: 'huntrr-workspace',
+    title: 'huntrr-workspace',
+    category: 'Software',
+    yearLabel: 'Personal web app',
+    subtitle: 'A personal dashboard for planning, habits, and creative projects',
+    description:
+      'An all-in-one workspace that brings together a daily agenda, calendar, daily logs, shopping lists, habit tracking, goals, notes, and creative project tools in a custom pink interface.',
+    stack: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS', 'Vite'],
+    notes: [
+      'Bring everyday planning tools together through a shared sidebar and dashboard.',
+      'Organize daily schedules and upcoming events alongside monthly calendar views.',
+      'Keep daily logs, shopping lists, habits, goals, and notes within one workspace.',
+      'Include tools for client receipts, prints, 3D models, and a character wiki.',
+      'Develop a custom interface with a pink polka-dot background, rounded panels, and responsive layouts.',
+    ],
+    codeUrl: 'https://github.com/hntrbloom/huntrr-workspace',
+    screenshot: '/images/huntrr-workspace.png',
+  },
 ];
 
 export const skillGroups = [

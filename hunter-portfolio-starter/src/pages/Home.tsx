@@ -26,7 +26,7 @@ export default function Home() {
     </RetroBox>
     <RetroBox title="Featured projects" icon="▧" action={<Link to="/projects">view all ({projects.length}) →</Link>} className="featured-box">
       <p className="box-intro">A few things from my digital workbench.</p>
-      <div className="projects-grid featured-projects">{projects.slice(0, 2).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}</div>
+      <div className="projects-grid featured-projects">{projects.filter(project => ['huntrr-space', 'huntrr-workspace'].includes(project.id)).map(project => <ProjectCard key={project.id} project={project} index={projects.indexOf(project)} />)}</div>
     </RetroBox>
     <div className="home-bottom-grid">
       <RetroBox title="On my workbench" icon="⌨">

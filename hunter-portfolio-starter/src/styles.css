@@ -290,6 +290,7 @@ a.badge:hover { border-color: var(--gray); background: var(--lavender-fill); tex
 .contact-signoff { padding-top: 19px; border-top: 1px dotted var(--gray); color: var(--muted); font-size: 11px; }
 .contact-signoff > span { display: inline-block; margin-top: 8px; font: italic 22px Georgia, serif; color: var(--heading); }
 .detail-art { height: 300px; border: 1px solid var(--border); border-radius: 3px; margin: 20px 0; }
+.detail-art > img { object-fit: contain; }
 .detail-art .mini-window { max-width: 330px; }
 .detail-art .project-art-content { padding-bottom: 35px; }
 .detail-art .mini-titlebar { font-size: 9px; }
