@@ -6,7 +6,7 @@ export function Badge({ children, to, className = '' }: { children: ReactNode; t
 }
 
 export default function RetroBox({ title, icon = '✧', children, action, className = '', id }: {
-  title: string; icon?: string; children: ReactNode; action?: ReactNode; className?: string; id?: string;
+  title: string; icon?: ReactNode; children: ReactNode; action?: ReactNode; className?: string; id?: string;
 }) {
   return <section className={`retro-box ${className}`} id={id}>
     <div className="box-heading"><h2><span aria-hidden="true">{icon}</span> {title}</h2>{action}</div>
