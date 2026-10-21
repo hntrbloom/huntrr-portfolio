@@ -1,28 +1,28 @@
-import { profile, projects } from './data.ts';
+import { projects } from './data.ts';
 
 export const site = {
   url: 'https://huntrr.dev',
-  name: "Hunter Bloom's Portfolio",
+  name: "huntrr's folio",
   image: '/social-preview.png',
   imageAlt: "Hunter Bloom's portfolio at huntrr.dev — software, AI, and hands-on engineering, with a pastel laptop illustration.",
 };
 
 export const seoPages = [
-  { path: '/', title: `${profile.name} | Developer Portfolio`, description: "Hunter Bloom's portfolio — software development, AI, data science, and hands-on engineering projects." },
-  { path: '/about', title: `About Me | ${profile.name}`, description: "Get to know Hunter Bloom: an aspiring computer engineer and software developer, with a curious mindset, hands-on experience, and a solo trip to Japan." },
-  { path: '/projects', title: `Projects | ${profile.name}`, description: "Explore Hunter Bloom's software, AI and data science, creative business tools, and 3D design projects, with technologies and project notes." },
-  { path: '/skills', title: `Skills | ${profile.name}`, description: "Explore Hunter Bloom's skills in programming, web development, cloud services, AI and data science, and hands-on engineering." },
-  { path: '/experience', title: `Experience | ${profile.name}`, description: "Explore Hunter Bloom's applied AI and data science internship at Ames National Laboratory, independent projects, and creative business experience." },
-  { path: '/resume', title: `Résumé | ${profile.name}`, description: "View and download Hunter Bloom's résumé, including software development skills, education, AI and data science experience, and hands-on projects." },
-  { path: '/contact', title: `Contact | ${profile.name}`, description: "Contact Hunter Bloom about software development, computer engineering opportunities, and creative projects." },
-  ...projects.map(project => ({ path: `/projects/${project.id}`, title: `${project.title} | ${profile.name}`, description: project.description })),
+  { path: '/', title: site.name, description: "Hunter Bloom's portfolio — software development, AI, data science, and hands-on engineering projects." },
+  { path: '/about', title: `About Me | ${site.name}`, description: "Get to know Hunter Bloom: an aspiring computer engineer and software developer, with a curious mindset, hands-on experience, and a solo trip to Japan." },
+  { path: '/projects', title: `Projects | ${site.name}`, description: "Explore Hunter Bloom's software, AI and data science, creative business tools, and 3D design projects, with technologies and project notes." },
+  { path: '/skills', title: `Skills | ${site.name}`, description: "Explore Hunter Bloom's skills in programming, web development, cloud services, AI and data science, and hands-on engineering." },
+  { path: '/experience', title: `Experience | ${site.name}`, description: "Explore Hunter Bloom's applied AI and data science internship at Ames National Laboratory, independent projects, and creative business experience." },
+  { path: '/resume', title: `Résumé | ${site.name}`, description: "View and download Hunter Bloom's résumé, including software development skills, education, AI and data science experience, and hands-on projects." },
+  { path: '/contact', title: `Contact | ${site.name}`, description: "Contact Hunter Bloom about software development, computer engineering opportunities, and creative projects." },
+  ...projects.map(project => ({ path: `/projects/${project.id}`, title: `${project.title} | ${site.name}`, description: project.description })),
 ];
 
 export function getPageMetadata(pathname: string) {
   const normalizedPath = pathname.replace(/\/+$/, '') || '/';
   const page = seoPages.find(item => item.path === normalizedPath);
   return {
-    title: page?.title ?? `Page not found | ${profile.name}`,
+    title: page?.title ?? `Page not found | ${site.name}`,
     description: page?.description ?? "This page isn't part of Hunter Bloom's portfolio. Explore the existing pages to learn about his work.",
     canonical: page ? new URL(page.path, site.url).href : null,
     robots: page ? 'index, follow' : 'noindex, follow',

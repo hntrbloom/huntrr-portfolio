@@ -14,6 +14,10 @@ for (const url of urls) {
   assert.equal(origin, 'https://huntrr.dev');
   const file = pathname === '/' ? 'index.html' : `${pathname.slice(1)}.html`;
   const html = await readFile(new URL(file, dist), 'utf8');
+  const titles = [...html.matchAll(/<title>([^<]+)<\/title>/g)].map(match => match[1]);
+  assert.equal(titles.length, 1, `${pathname} needs exactly one HTML title`);
+  if (pathname === '/') assert.equal(titles[0], "huntrr's folio");
+  else assert.ok(titles[0].endsWith(" | huntrr's folio"), `${pathname} should use the site name in its title`);
   assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1);
   assert.ok(html.includes(`<link rel="canonical" href="${url}"`), `Static canonical should match ${url}`);
   assert.ok(html.includes(`property="og:url" content="${url}"`), `Static social URL should match ${url}`);
