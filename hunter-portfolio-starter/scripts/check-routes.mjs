@@ -74,7 +74,7 @@ try {
   for (const content of ['A curious mind.', 'My next', 'Associate of Applied Science']) assert.ok(about.includes(content), 'Existing About content should remain');
   const { default: japanPhotos } = await server.ssrLoadModule('/src/content/japan-photos.json');
   assert.ok(about.includes('Postcards from Japan'), 'About should include the photo gallery');
-  if (japanPhotos.length === 0) assert.ok(about.includes('Photos from my trip are coming soon.'), 'The empty gallery should be honest about missing photos');
+  if (japanPhotos.length === 0) assert.ok(about.includes('More photos from the trip are coming soon.'), 'The empty gallery should be honest about missing photos');
   for (const photo of japanPhotos) assert.ok(about.includes(escape(photo.src)) && (!photo.caption || about.includes(escape(photo.caption))), 'Saved photos and captions should be visible to visitors');
   const css = await readFile(new URL('../src/styles.css', import.meta.url), 'utf8');
   assert.ok(!/gradient\s*\(/i.test(css), 'No CSS gradients');

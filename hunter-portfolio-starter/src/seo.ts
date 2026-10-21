@@ -9,7 +9,7 @@ export const site = {
 
 export const seoPages = [
   { path: '/', title: site.name, description: "Hunter Bloom's portfolio — software development, AI, data science, and hands-on engineering projects." },
-  { path: '/about', title: `About Me | ${site.name}`, description: "Get to know Hunter Bloom: an aspiring computer engineer and software developer, with a curious mindset, hands-on experience, and a solo trip to Japan." },
+  { path: '/about', title: `About Me | ${site.name}`, description: "Get to know Hunter Bloom: an aspiring computer engineer and software developer, with a curious mindset, hands-on experience, and two weeks exploring Japan with a friend at 18." },
   { path: '/projects', title: `Projects | ${site.name}`, description: "Explore Hunter Bloom's software, AI and data science, creative business tools, and 3D design projects, with technologies and project notes." },
   { path: '/skills', title: `Skills | ${site.name}`, description: "Explore Hunter Bloom's skills in programming, web development, cloud services, AI and data science, and hands-on engineering." },
   { path: '/experience', title: `Experience | ${site.name}`, description: "Explore Hunter Bloom's applied AI and data science internship at Ames National Laboratory, independent projects, and creative business experience." },
