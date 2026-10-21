@@ -46,7 +46,7 @@ npm run dev
 
 ## Production hosting
 
-The existing Vercel project is `huntrr-portfolio`, at https://huntrr.space. Its Root Directory must be `hunter-portfolio-starter`, with the Vite preset, `npm run build`, and output directory `dist`. See [DEPLOYMENT.md](DEPLOYMENT.md) for the exact dashboard settings, initial redeployment, and normal development workflow.
+The existing Vercel project is `huntrr-portfolio`, at https://huntrr.dev. Its Root Directory must be `hunter-portfolio-starter`, with the Vite preset, `npm run build`, and output directory `dist`. See [DEPLOYMENT.md](DEPLOYMENT.md) for the exact dashboard settings, initial redeployment, and normal development workflow.
 
 Dependency installation uses the committed `pnpm-lock.yaml`; `npm run ...` runs the same package scripts with those installed dependencies. Use pnpm when adding or updating dependencies so there is one authoritative lockfile.
 

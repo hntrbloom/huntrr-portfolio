@@ -1,10 +1,10 @@
 import { profile, projects } from './data.ts';
 
 export const site = {
-  url: 'https://huntrr.space',
+  url: 'https://huntrr.dev',
   name: "Hunter Bloom's Portfolio",
   image: '/social-preview.png',
-  imageAlt: "Hunter Bloom's portfolio at huntrr.space — software, AI, and hands-on engineering, with a pastel laptop illustration.",
+  imageAlt: "Hunter Bloom's portfolio at huntrr.dev — software, AI, and hands-on engineering, with a pastel laptop illustration.",
 };
 
 export const seoPages = [

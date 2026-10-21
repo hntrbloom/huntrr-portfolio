@@ -39,7 +39,7 @@ try {
       assert.equal(metadata.canonical, null, 'Missing pages should not claim another page as canonical');
       assert.equal(metadata.robots, 'noindex, follow');
     } else {
-      assert.equal(metadata.canonical, new URL(path, 'https://huntrr.space').href);
+      assert.equal(metadata.canonical, new URL(path, 'https://huntrr.dev').href);
       assert.equal(getPageMetadata(`${path === '/' ? '' : path}/`).canonical, metadata.canonical, 'Trailing slashes should use the same canonical');
     }
     assert.ok(!/href="tel:|\b\d{3}[-. ]\d{3}[-. ]\d{4}\b/.test(markup), `${path} should not expose a personal phone number`);

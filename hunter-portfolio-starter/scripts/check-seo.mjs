@@ -5,12 +5,13 @@ import { preview } from 'vite';
 const dist = new URL('../dist/', import.meta.url);
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
-assert.equal(urls.length, 11, 'Sitemap should include all seven main pages and four project pages');
+assert.equal(urls.length, 12, 'Sitemap should include all seven main pages and five project pages');
+assert.ok(urls.includes('https://huntrr.dev/projects/huntrr-workspace'), 'Sitemap should include huntrr-workspace');
 assert.equal(new Set(urls).size, urls.length, 'Sitemap should not repeat pages');
 
 for (const url of urls) {
   const { origin, pathname } = new URL(url);
-  assert.equal(origin, 'https://huntrr.space');
+  assert.equal(origin, 'https://huntrr.dev');
   const file = pathname === '/' ? 'index.html' : `${pathname.slice(1)}.html`;
   const html = await readFile(new URL(file, dist), 'utf8');
   assert.equal((html.match(/rel="canonical"/g) ?? []).length, 1);
@@ -20,7 +21,7 @@ for (const url of urls) {
   for (const tag of ['og:title', 'og:description', 'og:image', 'og:image:alt', 'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image']) {
     assert.equal((html.match(new RegExp(`(?:name|property)="${tag}"`, 'g')) ?? []).length, 1, `${url} needs exactly one ${tag}`);
   }
-  assert.ok(html.includes('content="https://huntrr.space/social-preview.png"'));
+  assert.ok(html.includes('content="https://huntrr.dev/social-preview.png"'));
   assert.ok(!html.includes('huntrr-portfolio.vercel.app'));
   assert.ok(html.includes('<div id="root"></div>'), 'Keep the existing React app entry');
   for (const [, asset] of html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)) {
@@ -30,7 +31,7 @@ for (const url of urls) {
 }
 const robots = await readFile(new URL('robots.txt', dist), 'utf8');
 assert.ok(robots.includes('Allow: /'));
-assert.ok(robots.includes('Sitemap: https://huntrr.space/sitemap.xml'));
+assert.ok(robots.includes('Sitemap: https://huntrr.dev/sitemap.xml'));
 const png = await readFile(new URL('social-preview.png', dist));
 assert.equal(png.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
 assert.equal(png.readUInt32BE(16), 1200);
