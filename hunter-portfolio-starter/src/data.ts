@@ -16,7 +16,7 @@ export const profile = {
   github: 'https://github.com/hntrbloom',
   linkedin: 'https://www.linkedin.com/in/huntrr-bloom',
   resume: '/resume/Hunter_Bloom_Public_Resume.pdf',
-  avatar: '', // Optional: '/images/profile.jpg'; otherwise use the illustrated laptop.
+  avatar: '/images/hunter-headshot.jpeg',
   mood: 'Inspired & a little caffeinated',
 };
 
@@ -57,11 +57,52 @@ export type Project = {
   notes: string[];
   demoUrl?: string;
   codeUrl?: string;
+  artifacts?: { label: string; url: string }[];
   screenshot?: string; // Public image path for the project screenshot.
   photos?: ProjectPhoto[];
 };
 
 export const projects: Project[] = [
+  {
+    id: 'nailsbyhuntrr-ai-dashboard',
+    title: 'NailsByHuntrr AI Business Dashboard',
+    category: 'AI & Data',
+    yearLabel: 'Applied AI internship project · 2026',
+    subtitle: 'Comparing AI development tools through a working business app',
+    description:
+      'A final applied AI project that compared Codex with Python and Streamlit against Google AI Studio with React and TypeScript. I used both approaches to turn scattered Etsy orders, inventory, color records, reviews, analytics, and 3D printer information into a deployed business dashboard.',
+    stack: ['Python', 'Streamlit', 'React', 'TypeScript', 'Google AI Studio', 'Recharts'],
+    notes: [
+      'Built a Python and Streamlit prototype focused on data organization, tables, charts, and debugging.',
+      'Developed the final app-style version with React, TypeScript, Vite, Tailwind CSS, and Google AI Studio.',
+      'Created a 10-prompt benchmark and manually scored both tools for speed, design, debugging, data organization, mobile usability, and final fit.',
+      'Connected business data for 107 color swatches, 26 nail listings, 20 sales records, 17 reviews, 32 orders, and $1,187 in recorded revenue.',
+      'Included a read-only Bambu printer status workflow showing print progress, temperatures, connectivity, and AMS Lite spool state.',
+      'Presented the findings in a full slide deck and a detailed research poster.',
+    ],
+    demoUrl: 'https://huntrr-dashboard-607549261991.us-east1.run.app/',
+    screenshot: '/images/nailsbyhuntrr-ai-dashboard.png',
+    artifacts: [
+      { label: 'View presentation', url: '/documents/Bloom_Hunter_Slides.pdf' },
+      { label: 'View project poster', url: '/documents/Bloom_Hunter_Posterboard.pdf' },
+    ],
+    photos: [
+      {
+        src: '/images/nailsbyhuntrr-ai-dashboard.png',
+        alt: 'NailsByHuntrr AI business dashboard project presentation preview.',
+        caption: 'Final applied AI project',
+        width: 1333,
+        height: 750,
+      },
+      {
+        src: '/images/ames-internship-group.jpeg',
+        alt: 'Five Applied AI and Data Science interns holding their completion certificates at Ames National Laboratory.',
+        caption: 'Our Applied AI and Data Science internship group at Ames National Laboratory',
+        width: 1536,
+        height: 1152,
+      },
+    ],
+  },
   {
     id: 'ai-data',
     title: 'AI & Data Science Work',

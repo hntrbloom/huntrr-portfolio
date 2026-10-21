@@ -22,7 +22,7 @@ export default function ProjectDetail() {
       <div className="tags">{project.stack.map(skill => <Badge key={skill} to="/skills">{skill}</Badge>)}</div>
       {project.photos && project.photos.length > 0 && <ProjectPhotoGallery key={project.id} photos={project.photos} projectTitle={project.title} />}
       <h3 className="detail-subheading">Process & project notes</h3><ul className="project-notes">{project.notes.map(note => <li key={note}>{note}</li>)}</ul>
-      {(project.demoUrl || project.codeUrl) && <div className="project-links">{project.demoUrl && <a className="button" href={project.demoUrl} target="_blank" rel="noreferrer">Live demo ↗</a>}{project.codeUrl && <a className="button" href={project.codeUrl} target="_blank" rel="noreferrer">GitHub ↗</a>}</div>}
+      {(project.demoUrl || project.codeUrl || project.artifacts?.length) && <div className="project-links">{project.demoUrl && <a className="button" href={project.demoUrl} target="_blank" rel="noreferrer">Live demo ↗</a>}{project.codeUrl && <a className="button" href={project.codeUrl} target="_blank" rel="noreferrer">GitHub ↗</a>}{project.artifacts?.map(artifact => <a className="button" href={artifact.url} target="_blank" rel="noreferrer" key={artifact.url}>{artifact.label} ↗</a>)}</div>}
     </RetroBox>
     <div className="project-pager">{projects.map((item, i) => <Link key={item.id} className={i === index ? 'current' : ''} aria-current={i === index ? 'page' : undefined} to={`/projects/${item.id}`}>{String(i + 1).padStart(2, '0')} · {item.title}</Link>)}</div>
   </>;
