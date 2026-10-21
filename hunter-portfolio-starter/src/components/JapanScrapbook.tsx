@@ -1,3 +1,4 @@
+import UiIcon from './UiIcon';
 import { useEffect, useRef, useState } from 'react';
 import type { ChangeEvent, KeyboardEvent } from 'react';
 import { japanTrip } from '../data';
@@ -144,7 +145,7 @@ export default function JapanScrapbook() {
         <span className="scrapbook-tape" aria-hidden="true" />
         <button className="japan-photo-button" type="button" aria-haspopup="dialog" aria-label={`Enlarge Japan photo ${index + 1}${photo.caption ? `: ${photo.caption}` : ''}`} onClick={() => setActiveId(photo.id)}>
           <img src={photo.src} alt={photo.caption || `A moment from Hunter's trip to Japan with a friend, photo ${index + 1}`} loading="lazy" width="640" height="480" />
-          <span className="photo-enlarge" aria-hidden="true">↗</span>
+          <span className="photo-enlarge" aria-hidden="true"><UiIcon name="external" /></span>
         </button>
         <figcaption>{editing && import.meta.env.DEV ? <><label className="sr-only" htmlFor={`caption-${photo.id}`}>Caption for photo {index + 1}</label><input id={`caption-${photo.id}`} className="photo-caption-input" placeholder="A little memory…" maxLength={240} value={draftCaptions[photo.id] ?? photo.caption} disabled={saving} onChange={event => setDraftCaptions(previous => ({ ...previous, [photo.id]: event.target.value }))} /><button className="photo-remove" type="button" disabled={saving} onClick={() => removePhoto(photo.id)}>Remove photo</button></> : <span>{photo.caption || 'a little moment, a lasting memory ♡'}</span>}</figcaption>
       </figure>)}
