@@ -16,7 +16,7 @@ export const profile = {
   github: 'https://github.com/hntrbloom',
   linkedin: 'https://www.linkedin.com/in/huntrr-bloom',
   resume: '/resume/Hunter_Bloom_Public_Resume.pdf',
-  avatar: '', // Optional: '/images/profile.jpg'; otherwise use the illustrated laptop.
+  avatar: '/images/hunter-headshot.jpeg',
   mood: 'Inspired & a little caffeinated',
 };
 
@@ -85,6 +85,22 @@ export const projects: Project[] = [
     artifacts: [
       { label: 'View presentation', url: '/documents/Bloom_Hunter_Slides.pdf' },
       { label: 'View project poster', url: '/documents/Bloom_Hunter_Posterboard.pdf' },
+    ],
+    photos: [
+      {
+        src: '/images/nailsbyhuntrr-ai-dashboard.png',
+        alt: 'NailsByHuntrr AI business dashboard project presentation preview.',
+        caption: 'Final applied AI project',
+        width: 1333,
+        height: 750,
+      },
+      {
+        src: '/images/ames-internship-group.jpeg',
+        alt: 'Five Applied AI and Data Science interns holding their completion certificates at Ames National Laboratory.',
+        caption: 'Our Applied AI and Data Science internship group at Ames National Laboratory',
+        width: 1536,
+        height: 1152,
+      },
     ],
   },
   {
