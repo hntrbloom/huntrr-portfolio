@@ -10,7 +10,7 @@ export const profile = {
   headline: 'Turning curious ideas into',
   headlineHighlight: 'useful software.',
   introduction:
-    'I build practical tools, explore AI and data, and love figuring out how systems work. My background combines software projects, an applied AI and data science internship, and hands-on 3D printing.',
+    'I’m interested in computer engineering and software development. I build practical tools, explore how software and hardware work together, and turn ideas into projects through coding and 3D printing.',
   location: 'Des Moines, Iowa',
   email: 'hebloom@icloud.com',
   github: 'https://github.com/hntrbloom',
