@@ -14,7 +14,7 @@ try {
   const { projects, profile, skillGroups, experiences, education, japanTrip } = await server.ssrLoadModule('/src/data.ts');
   const { getPageMetadata, seoPages, site } = await server.ssrLoadModule('/src/seo.ts');
   const pages = [
-    ['/', 'Welcome to my'], ['/about', 'A curious mind.'], ['/projects', 'Things I&#x27;ve'],
+    ['/', 'HELLO, WORLD_'], ['/about', 'A curious mind.'], ['/projects', 'Things I&#x27;ve'],
     ['/skills', 'Tools I work'], ['/experience', 'Learning by'], ['/contact', 'Leave a little hello'],
     ['/resume', 'Hunter&#x27;s résumé'],
     ...projects.map(project => [`/projects/${project.id}`, project.title.replaceAll('&', '&amp;')]),

@@ -6,9 +6,9 @@ import RetroBox, { Badge } from '../components/RetroBox';
 
 export default function Home() {
   return <>
-    <section className="welcome-box" aria-labelledby="welcome-heading">
+    <h1 className="sr-only">{profile.name}’s portfolio</h1>
+    <section className="welcome-box" aria-label="Introduction">
       <div className="welcome-top"><span className="pixel-label">HELLO, WORLD_</span><span aria-hidden="true">♡ ✧ ☆</span></div>
-      <h1 id="welcome-heading">Welcome to my <em>little space.</em></h1>
       <p>I’m {profile.name} — an aspiring computer engineer, curious thinker, and maker of cute things. I’m interested in software engineering, AI, computer systems, and hardware.</p>
       <div className="welcome-bottom"><Link className="button button-primary" to="/resume">View My Résumé →</Link><Badge to="/about">✦ get to know me</Badge><span>built with curiosity & a few too many tabs open</span></div>
     </section>
