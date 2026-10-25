@@ -89,10 +89,10 @@ export const projects: Project[] = [
     photos: [
       {
         src: '/images/nailsbyhuntrr-ai-dashboard.png',
-        alt: 'NailsByHuntrr AI business dashboard project presentation preview.',
-        caption: 'Final applied AI project',
-        width: 1333,
-        height: 750,
+        alt: 'NailsByHuntrr Streamlit dashboard overview with shop statistics and a revenue trend chart.',
+        caption: 'Python and Streamlit prototype — shop overview and revenue trend',
+        width: 1861,
+        height: 791,
       },
       {
         src: '/images/ames-internship-group.jpeg',
